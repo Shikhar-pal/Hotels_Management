@@ -4,10 +4,8 @@ require('dotenv').config();
 // const mongoURL = process.env.DB_URL_LOCAL 
 const mongoURL = process.env.DB_URL;
 // connect to the MongoDB database using Mongoose
-mongoose.connect(process.env.DB_URL || process.env.DB_URL_LOCAL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(process.env.DB_URL || process.env.DB_URL_LOCAL)
+ .then(() => {
   console.log('Connected to MongoDB');
 }).catch((err) => {
   console.log('Error connecting to MongoDB: ' + err);
